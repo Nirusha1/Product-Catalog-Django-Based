@@ -1,0 +1,12 @@
+{% extends "shop/base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="product-detail">
+        <img src="{{product.image.url}}">
+        <h1 style="font-size:40px; font-style:bold;">{{ product.name }}</h1>
+        <h2 style="font-size:20px"><a href="{{product.category.get_absolute_url}}">Category:{{ product.category }}</a></h2>
+        <p class="price" style="font-size:20px">Price:${{ product.price }}</p>
+        {{ product.description|linebreaks }}
+    </div>
+{% endblock %}
